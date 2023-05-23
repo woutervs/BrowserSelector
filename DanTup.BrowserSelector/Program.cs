@@ -235,9 +235,8 @@ To open multiple urls at the same time and wait for them, try the following:
 					}
 					else
 					{
-						// We're only checking the domain.
-						domain = uri.Authority;
-
+						
+						domain = $"{uri.Scheme}://{uri.Authority}";
 						// Escape the input for regex; the only special character we support is a *
 						var regex = Regex.Escape(urlPattern);
 						// Unescape * as a wildcard.
